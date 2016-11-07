@@ -1,0 +1,5 @@
+# Composer install location
+vendor/
+
+# PhpDocumentor generated directory
+docs/
