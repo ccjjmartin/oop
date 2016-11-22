@@ -1,10 +1,37 @@
 # OOP
 Object Orientated Programming
 
-My notes from:
+This contains both my notes from:
 
 PHP Objects, Patterns, and Practice
 By Matt Zandstra
+
+And a custom built exercise to test many areas of knowledge mentioned in the
+book.
+
+## Testing Locally (on a mac):
+I am currently using XAMPP to test this since it only needs apache and php to
+run.  To set this up on XAMPP I went into the httpd-vhost.conf file found at
+/Applications/XAMPP/etc/extra and added configuration that matched where I
+installed the repository.  I also edited the httpd.conf file found at
+/Applications/XAMPP/etc to uncomment the include referencing the vhosts file.
+
+Then start the Apache server.
+
+NOTE: An example httpd-vhosts.conf file can be found in the examples directory.
+Edit this file at least twice to match your repository install location.
+
+## Testing Twitter locally:
+You will need to register for a TwitterAPIKey.
+
+Go to: https://apps.twitter.com/
+
+Create a new app.  Make sure you visit the keys and access tokens tab and create
+a consumer key and then an access token.
+
+Copy the twitter/example.settings.php file to twitter/settings.php and drop your
+private credentials into the file (do not commit these but keep them in a safe
+place).
 
 ## Scripts:
 If you wish to run any scripts run them from the project root directory using
