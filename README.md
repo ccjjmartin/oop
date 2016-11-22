@@ -12,18 +12,18 @@ book.
 ## WIP:
 This project is a work in progress.  It is currently pending:
 
-1) Addition of autoloading functionality.
-2) Transfer to twig file templates.
-3) Addition of PHP Unit tests.
-4) Addition of additional commonly used patterns.
-5) Addition of UML files.
-6) Build caching functionality for external api calls.
-7) Remove procedural twitter example.
+1. Addition of autoloading functionality.
+2. Transfer to twig file templates.
+3. Addition of PHP Unit tests.
+4. Addition of additional commonly used patterns.
+5. Addition of UML files.
+6. Build caching functionality for external api calls.
+7. Remove procedural twitter example.
 
 ## Future plans:
 These items will probably never get time to materialize:
 
-1) Build a router and other items mentioned in overview diagram.
+1. Build a router and other items mentioned in overview diagram.
 
 ## Testing Locally (on a mac):
 I am currently using XAMPP to test this since it only needs apache and php to
@@ -61,16 +61,13 @@ data from everywhere.  The big boss "El Jefe" has instructed everyone at the
 company to find ways to add more content to the website.  In order to work your
 way up the corporate ladder you must design a system that is:
 
-1) Object orientated in php
-
-2) Easily extensible in the future
-
-3) Able to accept the following file types:
-  a) Text files (csv)
-  b) Yaml files (yml)
-  c) For the zealous enough ... twitter feeds.
-
-4) You will need to provide basic coverage using php unit testing.
+1. Object orientated in php
+2. Easily extensible in the future
+3. Able to accept the following file types:
+  1. Text files (csv)
+  2. Yaml files (yml)
+  3. For the zealous enough ... twitter feeds.
+4. You will need to provide basic coverage using php unit testing.
 
 As always, should you or any of your team be caught or killed, the Secretary
 will disavow any knowledge of your actions. This recording will self-destruct in
