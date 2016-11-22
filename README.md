@@ -74,3 +74,10 @@ will disavow any knowledge of your actions. This recording will self-destruct in
 five seconds.
 
 Good luck!
+
+## Examples:
+UML Diagram:
+![UML_Diagram](examples/UML_Diagram.png)
+
+Processed Data:
+![Processed_Data](examples/Processed_Data.png)
