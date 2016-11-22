@@ -19,6 +19,8 @@ This project is a work in progress.  It is currently pending:
 5. Addition of UML files.
 6. Build caching functionality for external api calls.
 7. Remove procedural twitter example.
+8. Text importer (csv)
+9. Yaml importer (yml)
 
 ## Future plans:
 These items will probably never get time to materialize:
