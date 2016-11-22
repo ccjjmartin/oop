@@ -9,6 +9,22 @@ By Matt Zandstra
 And a custom built exercise to test many areas of knowledge mentioned in the
 book.
 
+## WIP:
+This project is a work in progress.  It is currently pending:
+
+1) Addition of autoloading functionality.
+2) Transfer to twig file templates.
+3) Addition of PHP Unit tests.
+4) Addition of additional commonly used patterns.
+5) Addition of UML files.
+6) Build caching functionality for external api calls.
+7) Remove procedural twitter example.
+
+## Future plans:
+These items will probably never get time to materialize:
+
+1) Build a router and other items mentioned in overview diagram.
+
 ## Testing Locally (on a mac):
 I am currently using XAMPP to test this since it only needs apache and php to
 run.  To set this up on XAMPP I went into the httpd-vhost.conf file found at
