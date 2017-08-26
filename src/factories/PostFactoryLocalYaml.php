@@ -4,7 +4,7 @@
  * A local post factory.
  */
 
-require_once '../vendor/autoload.php';
+namespace Oop\Retrievers\Yaml;
 
 use Symfony\Component\Yaml\Yaml;
 

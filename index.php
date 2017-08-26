@@ -4,6 +4,8 @@
  * Temporary home page to test functionality.
  */
 
+require_once 'vendor/autoload.php';
+
 // Include singleton class to create the temporary display page.
 // @todo: Ultimately would be replaced by a router.
 require_once 'includes/PostCollectionPage.php';
