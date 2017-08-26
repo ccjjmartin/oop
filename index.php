@@ -7,10 +7,11 @@
 // Include singleton class to create the temporary display page.
 // @todo: Ultimately would be replaced by a router.
 require_once 'includes/PostCollectionPage.php';
+require_once 'twitter/PostFactoryExternalTwitter.php';
 
 // Get the singleton and gather posts from data sources.
 $page = PostCollectionPage::getInstance();
-$page->gatherPosts();
+$page->gatherPosts('twitter');
 
 // Print a page title.
 // @todo: Ultimately replace with a twig template.

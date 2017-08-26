@@ -10,5 +10,8 @@
     "phpdocumentor/phpdocumentor": "2.*",
     "facebook/webdriver": "^1.2",
     "se/selenium-server-standalone": "dev-update-3.0.0-beta4"
+  },
+  "require": {
+    "symfony/yaml": "^3.3"
   }
 }

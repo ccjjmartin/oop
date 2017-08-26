@@ -7,8 +7,6 @@
  * example patterns in PHP.
  */
 
-require_once 'twitter/PostFactoryExternalTwitter.php';
-
 /**
  * A singleton pattern class to produce the homepage.
  */
@@ -67,7 +65,6 @@ class PostCollectionPage {
    * Gather posts.
    */
   public function gatherPosts($type = 'all') {
-
     // An array of post objects.
     $posts = array();
 
@@ -78,10 +75,12 @@ class PostCollectionPage {
     // if ($type == 'csv' || $type == 'all') {
     // $posts += LocalCsvFactory::retrieve();
     // }
-    // if ($type == 'yaml' || $type == 'all') {
-    // $posts += LocalYmlFactory::retrieve();
-    // }
-    //
+    if ($type == 'yaml' || $type == 'all') {
+      $yaml = new PostFactoryLocalYaml();
+      $data = $yaml->retrieveData();
+      $posts += $yaml->createPosts($data);
+    }
+
     if ($type == 'twitter' || $type == 'all') {
       $twitter = new PostFactoryExternalTwitter();
       $data = $twitter->retrieveData();
