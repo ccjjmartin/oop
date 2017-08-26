@@ -12,7 +12,7 @@ book.
 ## WIP:
 This project is a work in progress.  It is currently pending:
 
-1. Addition of autoloading functionality.
+1. ~~Addition of autoloading functionality.~~
 2. Transfer to twig file templates.
 3. Addition of PHP Unit tests.
 4. Addition of additional commonly used patterns.
@@ -20,12 +20,13 @@ This project is a work in progress.  It is currently pending:
 6. Build caching functionality for external api calls.
 7. Remove procedural twitter example.
 8. Text importer (csv)
-9. Yaml importer (yml)
+9. ~~Yaml importer (yml)~~
 
 ## Future plans:
 These items will probably never get time to materialize:
 
-1. Build a router and other items mentioned in overview diagram.
+1. ~~Build a router and other items mentioned in overview diagram.~~
+Transition to symphony instead of building a router.
 
 ## Testing Locally (on a mac):
 I am currently using XAMPP to test this since it only needs apache and php to
