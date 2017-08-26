@@ -87,7 +87,7 @@ class PostCollectionPage {
     }
 
     if ($type == 'twitter' || $type == 'all') {
-      $twitter = new PostFactoryExternalTwitter();
+      $twitter = new PostFactoryExternalTwitter('/../../twitter');
       $data = $twitter->retrieveData();
       $posts += $twitter->createPosts($data);
     }

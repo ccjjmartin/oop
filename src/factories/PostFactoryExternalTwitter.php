@@ -24,13 +24,15 @@ class PostFactoryExternalTwitter extends PostFactoryExternal {
   private $twitterApiExchange;
   private $screenName         = 'ccjjmartin';
   private $count              = 20;
+  private $configDir         = '';
 
   /**
    * Constructor.
    */
-  public function __construct() {
+  public function __construct($configDir) {
+    $this->configDir = $configDir;
     // Creates a $settings variable containing api keys.
-    require_once dirname(__FILE__) . '/settings.php';
+    require_once dirname(__FILE__) . $this->configDir . '/settings.php';
 
     // Set the cache to expire after 24 hours.
     // @todo: Currently this is non functional.
@@ -124,7 +126,7 @@ class PostFactoryExternalTwitter extends PostFactoryExternal {
    */
   protected function save($data) {
     // Save the file to a known location for retrevial later.
-    $fp = fopen(dirname(__FILE__) . '/files/twitter_cache.json', 'w');
+    $fp = fopen(dirname(__FILE__) . $this->configDir . '/files/twitter_cache.json', 'w');
     fwrite($fp, json_encode($data));
     fclose($fp);
   }
@@ -143,8 +145,8 @@ class PostFactoryExternalTwitter extends PostFactoryExternal {
 
     // Check if the know file location exists.
     // If it does, retreive the file, if not return FALSE.
-    if (file_exists(dirname(__FILE__) . '/files/twitter_cache.json')) {
-      $string = file_get_contents(dirname(__FILE__) . '/files/twitter_cache.json');
+    if (file_exists(dirname(__FILE__) . $this->configDir . '/files/twitter_cache.json')) {
+      $string = file_get_contents(dirname(__FILE__) . $this->configDir . '/files/twitter_cache.json');
       $data = json_decode($string, TRUE);
       return $data;
     }
