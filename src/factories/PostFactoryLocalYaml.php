@@ -4,13 +4,11 @@
  * A local post factory.
  */
 
-namespace Oop\Retrievers\Yaml;
+namespace Oop\Factories;
 
 use Symfony\Component\Yaml\Yaml;
-
-// Required classes.
-require_once '../includes/PostFactoryLocal.php';
-require_once '../includes/Post.php';
+use Oop\Factories\PostFactoryLocal;
+use Oop\Models\Post;
 
 /**
  * Local post factory.

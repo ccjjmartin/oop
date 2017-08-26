@@ -1,12 +1,13 @@
 <?php
 
-// Required classes.
-require_once 'PostFactoryLocalYaml.php';
+$loader = require_once '../vendor/autoload.php';
+$loader->addPsr4('Oop\\', __DIR__ . '/../src');
+
+use Oop\Controllers\PostCollectionPage;
+use Oop\Factories\PostFactoryLocalYaml;
 
 // Include singleton class to create the temporary display page.
 // @todo: Ultimately would be replaced by a router.
-require_once '../includes/PostCollectionPage.php';
-
 // Get the singleton and gather posts from data sources.
 $page = PostCollectionPage::getInstance();
 $page->gatherPosts('yaml');

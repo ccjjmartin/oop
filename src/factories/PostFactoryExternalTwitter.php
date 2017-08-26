@@ -4,12 +4,11 @@
  * An external twitter post factory.
  */
 
-// Required classes.
-require_once 'includes/PostFactoryExternal.php';
-require_once 'includes/Post.php';
+namespace Oop\Factories;
 
-// Third Party API wrapper for REST API calls.
-require_once dirname(__FILE__) . '/TwitterAPIExchange.php';
+use Oop\Factories\PostFactoryExternal;
+use Oop\Models\Post;
+use Oop\TwitterAPIExchange;
 
 /**
  * The twitter post factory.

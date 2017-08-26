@@ -4,8 +4,9 @@
  * A local post factory.
  */
 
- // Require base class.
- require_once 'PostFactory.php';
+namespace Oop\Factories;
+
+use Oop\Factories\PostFactory;
 
 /**
  * Local post factory.

@@ -7,6 +7,11 @@
  * example patterns in PHP.
  */
 
+namespace Oop\Controllers;
+
+use Oop\Factories\PostFactoryLocalYaml;
+use Oop\Factories\PostFactoryExternalTwitter;
+
 /**
  * A singleton pattern class to produce the homepage.
  */

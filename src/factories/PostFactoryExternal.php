@@ -4,8 +4,9 @@
  * An abstract PostFactoryExternal and FetchableInterface.
  */
 
-// Require base class.
-require_once 'PostFactory.php';
+namespace Oop\Factories;
+
+use Oop\Factories\PostFactory;
 
 /**
  * The fetchable interface.
