@@ -125,4 +125,24 @@ class PostCollectionPage {
     return $output;
   }
 
+  /**
+   * Render array method.
+   */
+  public function renderArray() {
+    $output = array();
+
+    if (!empty($this->posts)) {
+      foreach ($this->posts as $post_key => $post_object) {
+        $output[] = array(
+          'author' => $this->posts[$post_key]->author,
+          'screenName' => $this->posts[$post_key]->screenName,
+          'created' => $this->posts[$post_key]->created,
+          'body' => $this->posts[$post_key]->body,
+        );
+      }
+    }
+
+    return $output;
+  }
+
 }

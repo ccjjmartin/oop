@@ -16,9 +16,10 @@ use Oop\Factories\PostFactoryExternalTwitter;
 $page = PostCollectionPage::getInstance();
 $page->gatherPosts('twitter');
 
-// Print a page title.
-// @todo: Ultimately replace with a twig template.
-print "<h1 style='margin:2em 0'><center>Christopher Martin's Twitter Posts</center></h1>";
-
-// Call the render HTML method from the page singleton.
-print $page->renderHTML();
+// Load template files.
+$loader = new Twig_Loader_Filesystem('templates');
+$twig = new Twig_Environment($loader, array(
+//  'cache' => '/compilation_cache',
+//  'debug' => TRUE,
+));
+echo $twig->render('index.twig', array('posts' => $page->renderArray()));

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Christopher Martin's Posts</title>
+    {% block stylesheets %}
+      <link href="css/main.css" rel="stylesheet" />
+    {% endblock %}
+  </head>
+  <body>
+    <ul id="navigation">
+    {% for item in navigation %}
+      <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <h1 style='margin:2em 0'>
+      <center>Christopher Martin's Twitter Posts</center>
+    </h1>
+    <div class="posts-wrapper">
+    {% for post in posts %}
+      {% include 'components/posts.twig' with {
+        'author': post.author,
+        'screenName': post.screenName,
+        'created': post.created,
+        'body': post.body,
+      } %}
+    {% endfor %}
+    </div>
+
+    {% block javascripts %}
+      <!-- <script src=""></script> -->
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,16 @@
+body {
+  background-color: floralwhite;
+}
+
+.posts-wrapper {
+  max-width: 60em;
+  margin: auto;
+}
+
+.post {
+  background-color: moccasin;
+  border-radius: 1em;
+  box-shadow: 0.5em 0.5em grey;
+  margin: 2em;
+  padding: 1em;
+}

@@ -13,7 +13,7 @@ book.
 This project is a work in progress.  It is currently pending:
 
 1. ~~Addition of autoloading functionality.~~
-2. Transfer to twig file templates.
+2. ~~Transfer to twig file templates.~~
 3. Addition of PHP Unit tests.
 4. Addition of additional commonly used patterns.
 5. Addition of UML files.

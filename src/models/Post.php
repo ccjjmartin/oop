@@ -11,6 +11,7 @@ namespace Oop\Models;
  */
 class Post {
   public $author;
+  public $screenName;
   public $created;
   public $body;
   public $type;
@@ -18,11 +19,12 @@ class Post {
   /**
    * Basic constructor for the post object.
    */
-  public function __construct($author, $created, $body, $type) {
-    $this->author  = $author;
+  public function __construct($author, $screenName, $created, $body, $type) {
+    $this->author = $author;
+    $this->screenName  = $screenName;
     $this->created = $created;
-    $this->body    = $body;
-    $this->type    = $type;
+    $this->body = $body;
+    $this->type = $type;
   }
 
   /**

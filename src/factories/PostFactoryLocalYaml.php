@@ -41,7 +41,8 @@ class PostFactoryLocalYaml extends PostFactoryLocal {
     // Loop through the provided twitter API data and create Post instances.
     foreach ($data as $item) {
       $new_post = new Post(
-        $item['user']['name'] . ' (<a href="https://twitter.com/' . $item['user']['screen_name'] . '">@' . $item['user']['screen_name'] . '</a>)',
+        $item['user']['name'],
+        $item['user']['screen_name'],
         $item['created_at'],
         $item['text'],
         $this->source
