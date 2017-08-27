@@ -70,6 +70,10 @@ class PostCollectionPage {
    * Gather posts.
    */
   public function gatherPosts($type = 'all') {
+    if (empty($type)) {
+      $type = 'all';
+    }
+
     // An array of post objects.
     $posts = array();
 
@@ -81,13 +85,13 @@ class PostCollectionPage {
     // $posts += LocalCsvFactory::retrieve();
     // }
     if ($type == 'yaml' || $type == 'all') {
-      $yaml = new PostFactoryLocalYaml();
+      $yaml = new PostFactoryLocalYaml('files/yaml');
       $data = $yaml->retrieveData();
       $posts += $yaml->createPosts($data);
     }
 
     if ($type == 'twitter' || $type == 'all') {
-      $twitter = new PostFactoryExternalTwitter('/../../twitter');
+      $twitter = new PostFactoryExternalTwitter('/../../files/twitter');
       $data = $twitter->retrieveData();
       $posts += $twitter->createPosts($data);
     }

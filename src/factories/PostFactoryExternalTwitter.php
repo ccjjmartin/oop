@@ -24,7 +24,7 @@ class PostFactoryExternalTwitter extends PostFactoryExternal {
   private $twitterApiExchange;
   private $screenName         = 'ccjjmartin';
   private $count              = 20;
-  private $configDir         = '';
+  private $configDir          = '';
 
   /**
    * Constructor.
@@ -127,7 +127,7 @@ class PostFactoryExternalTwitter extends PostFactoryExternal {
    */
   protected function save($data) {
     // Save the file to a known location for retrevial later.
-    $fp = fopen(dirname(__FILE__) . $this->configDir . '/files/twitter_cache.json', 'w');
+    $fp = fopen(dirname(__FILE__) . $this->configDir . '/twitter_cache.json', 'w');
     fwrite($fp, json_encode($data));
     fclose($fp);
   }
@@ -146,8 +146,8 @@ class PostFactoryExternalTwitter extends PostFactoryExternal {
 
     // Check if the know file location exists.
     // If it does, retreive the file, if not return FALSE.
-    if (file_exists(dirname(__FILE__) . $this->configDir . '/files/twitter_cache.json')) {
-      $string = file_get_contents(dirname(__FILE__) . $this->configDir . '/files/twitter_cache.json');
+    if (file_exists(dirname(__FILE__) . $this->configDir . '/twitter_cache.json')) {
+      $string = file_get_contents(dirname(__FILE__) . $this->configDir . '/twitter_cache.json');
       $data = json_decode($string, TRUE);
       return $data;
     }

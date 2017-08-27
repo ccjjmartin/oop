@@ -16,12 +16,20 @@ use Oop\Models\Post;
 class PostFactoryLocalYaml extends PostFactoryLocal {
   private $filepath;
   private $source         = 'yaml';
+  private $configDir      = '';
+
+  /**
+   * Constructor.
+   */
+  public function __construct($configDir) {
+    $this->configDir = $configDir;
+  }
 
   /**
    * The public retrieve data method.
    */
   public function retrieveData() {
-    $data = Yaml::parse(file_get_contents('data.yml'));
+    $data = Yaml::parse(file_get_contents($this->configDir . '/data.yml'));
     return $data;
   }
 

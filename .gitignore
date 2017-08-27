@@ -3,3 +3,6 @@ vendor/
 
 # PhpDocumentor generated directory
 docs/
+
+# Files
+files/
