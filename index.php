@@ -10,12 +10,26 @@ $loader->addPsr4('Oop\\', __DIR__ . '/src');
 $loader->register();
 
 use Oop\Core;
+use Oop\Controllers\PostCollectionPage;
+use Oop\Controllers\HomepagePage;
 use Symfony\Component\HttpFoundation\Request;
 
 $request = Request::createFromGlobals();
 
 // Our framework is now handling itself the request.
 $app = new Core();
+$app->map('/', function () {
+  $page = new HomepagePage();
+  return $page->homepage();
+});
+$app->map('/posts/twitter', function () {
+  $page = new PostCollectionPage();
+  return $page->displayPosts('twitter');
+});
+$app->map('/posts/yaml', function () {
+  $page = new PostCollectionPage();
+  return $page->displayPosts('yaml');
+});
 
 $response = $app->handle($request);
 $response->send();

@@ -1,19 +1,13 @@
 <?php
-/**
- * @file
- * Singleton class to display temporary home page to test functionality.
- *
- * Thanks to: http://www.phptherightway.com/pages/Design-Patterns.html for
- * example patterns in PHP.
- */
 
 namespace Oop\Controllers;
 
 use Oop\Factories\PostFactoryLocalYaml;
 use Oop\Factories\PostFactoryExternalTwitter;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
- * A singleton pattern class to produce the homepage.
+ * A controller to build a display of posts.
  */
 class PostCollectionPage {
 
@@ -26,45 +20,6 @@ class PostCollectionPage {
    * A collection of posts.
    */
   private $posts;
-
-  /**
-   * Returns the *Singleton* instance of this class.
-   *
-   * @return Singleton
-   *   The *Singleton* instance.
-   */
-  public static function getInstance() {
-
-    if (NULL === static::$instance) {
-      static::$instance = new static();
-    }
-
-    return static::$instance;
-  }
-
-  /**
-   * Constructor method.
-   *
-   * Protected constructor to prevent creating a new instance of the
-   * *Singleton* via the `new` operator from outside of this class.
-   */
-  protected function __construct() {
-
-  }
-
-  /**
-   * Private clone method to prevent cloning of the *Singleton* instance.
-   */
-  private function __clone() {
-
-  }
-
-  /**
-   * Private unserialize method to prevent unserializing of the *Singleton*.
-   */
-  private function __wakeup() {
-
-  }
 
   /**
    * Gather posts.
@@ -130,6 +85,30 @@ class PostCollectionPage {
     }
 
     return $output;
+  }
+
+  /**
+   * Display posts.
+   */
+  public function displayPosts($type) {
+    $response = new Response();
+    switch ($type) {
+      case 'twitter':
+      case 'yaml':
+        // Load template files.
+        $loader = new \Twig_Loader_Filesystem('templates');
+        $twig = new \Twig_Environment($loader, array(
+        // 'cache' => '/compilation_cache',
+        //  'debug' => TRUE,.
+        ));
+
+        // Gather posts from data sources.
+        $this->gatherPosts($type);
+        $html = $twig->render('index.twig', array('posts' => $this->renderArray()));
+        $response->setContent($html);
+        return $response;
+
+    }
   }
 
 }
