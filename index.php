@@ -9,36 +9,13 @@ $loader = require 'vendor/autoload.php';
 $loader->addPsr4('Oop\\', __DIR__ . '/src');
 $loader->register();
 
-use Oop\Controllers\PostCollectionPage;
-use Oop\Factories\PostFactoryExternalTwitter;
+use Oop\Core;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 $request = Request::createFromGlobals();
-$response = new Response();
 
-$path = $request->getPathInfo();
-switch ($path) {
-  case '/':
-  case '/twitter':
-  case '/yaml':
-    // Load template files.
-    $loader = new Twig_Loader_Filesystem('templates');
-    $twig = new Twig_Environment($loader, array(
-    //  'cache' => '/compilation_cache',
-    //  'debug' => TRUE,
-    ));
+// Our framework is now handling itself the request.
+$app = new Core();
 
-    // Get the singleton and gather posts from data sources.
-    $page = PostCollectionPage::getInstance();
-    $page->gatherPosts(substr($path, 1));
-    $html = $twig->render('index.twig', array('posts' => $page->renderArray()));
-    $response->setContent($html);
-    $response->send();
-    break;
-
-  default:
-    $response->setContent('Page not found!');
-    $response->setStatusCode(Response::HTTP_NOT_FOUND);
-    $response->send();
-}
+$response = $app->handle($request);
+$response->send();
