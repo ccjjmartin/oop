@@ -27,27 +27,4 @@ class Post {
     $this->type = $type;
   }
 
-  /**
-   * A basic function to return an html representation of a post.
-   */
-  public function renderHtml() {
-
-    // Before rendering it would be useful to validate the data and sanitize it.
-    $output = '';
-
-    // Replace with twig template.
-    $output .= '<div class="post ' . $this->type . '" style="
-      border: solid;
-      padding: .5em;
-      margin: 1.0em;
-    ">';
-
-    $output .= $this->author . ' on ' . $this->created . ' said: </br></br>';
-    $output .= $this->body . '</br>';
-
-    $output .= '</div></br>';
-
-    return $output;
-  }
-
 }

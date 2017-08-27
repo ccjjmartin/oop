@@ -113,23 +113,6 @@ class PostCollectionPage {
   }
 
   /**
-   * Render HTML method.
-   *
-   * @todo: Replace this code with a twig template.
-   */
-  public function renderHtml() {
-    $output = '';
-
-    if (!empty($this->posts)) {
-      foreach ($this->posts as $post_key => $post_object) {
-        $output .= $this->posts[$post_key]->renderHtml();
-      }
-    }
-
-    return $output;
-  }
-
-  /**
    * Render array method.
    */
   public function renderArray() {
