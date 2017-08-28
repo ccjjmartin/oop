@@ -90,9 +90,10 @@ class PostCollectionPage {
   /**
    * Display posts.
    */
-  public function displayPosts($type) {
+  public function displayPosts($type = 'all') {
     $response = new Response();
     switch ($type) {
+      case 'all':
       case 'twitter':
       case 'yaml':
         // Load template files.

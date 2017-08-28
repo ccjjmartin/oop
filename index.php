@@ -22,13 +22,9 @@ $app->map('/', function () {
   $page = new HomepagePage();
   return $page->homepage();
 });
-$app->map('/posts/twitter', function () {
+$app->map('/posts/{type}', function ($type) {
   $page = new PostCollectionPage();
-  return $page->displayPosts('twitter');
-});
-$app->map('/posts/yaml', function () {
-  $page = new PostCollectionPage();
-  return $page->displayPosts('yaml');
+  return $page->displayPosts($type);
 });
 
 $response = $app->handle($request);

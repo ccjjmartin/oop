@@ -43,7 +43,8 @@ class Core implements HttpKernelInterface {
     try {
       $attributes = $matcher->match($request->getPathInfo());
       $controller = $attributes['_controller'];
-      $response = $controller();
+      unset($attributes['_controller']);
+      $response = call_user_func_array($controller, $attributes);
     }
     catch (ResourceNotFoundException $e) {
       $response = new Response('Not found!', Response::HTTP_NOT_FOUND);
