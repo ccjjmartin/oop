@@ -2,7 +2,7 @@
 
 namespace Oop;
 
-use Oop\Controllers\PostCollectionPage;
+use Oop\Controller\PostCollectionPage;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;

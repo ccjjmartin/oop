@@ -4,7 +4,7 @@
  * An abstract PostFactory class and the RetreivableInterface.
  */
 
-namespace Oop\Factories;
+namespace Oop\Factory;
 
 /**
  * The retreivable interface.

@@ -4,9 +4,9 @@
  * A local post factory.
  */
 
-namespace Oop\Factories;
+namespace Oop\Factory;
 
-use Oop\Factories\PostFactory;
+use Oop\Factory\PostFactory;
 
 /**
  * Local post factory.

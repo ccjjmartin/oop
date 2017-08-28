@@ -4,7 +4,7 @@
  * A post object.
  */
 
-namespace Oop\Models;
+namespace Oop\Model;
 
 /**
  * Post object.

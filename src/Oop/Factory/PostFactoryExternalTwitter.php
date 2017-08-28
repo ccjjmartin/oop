@@ -4,10 +4,10 @@
  * An external twitter post factory.
  */
 
-namespace Oop\Factories;
+namespace Oop\Factory;
 
-use Oop\Factories\PostFactoryExternal;
-use Oop\Models\Post;
+use Oop\Factory\PostFactoryExternal;
+use Oop\Model\Post;
 use Oop\TwitterAPIExchange;
 
 /**

@@ -10,9 +10,11 @@ $loader->addPsr4('Oop\\', __DIR__ . '/src');
 $loader->register();
 
 use Oop\Core;
-use Oop\Controllers\PostCollectionPage;
-use Oop\Controllers\HomepagePage;
+use Oop\Controller\PostCollectionPage;
+use Oop\Controller\HomepagePage;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Routing\Loader\YamlFileLoader;
 
 $request = Request::createFromGlobals();
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Oop\Controllers;
+namespace Oop\Controller;
 
-use Oop\Factories\PostFactoryLocalYaml;
-use Oop\Factories\PostFactoryExternalTwitter;
+use Oop\Factory\PostFactoryLocalYaml;
+use Oop\Factory\PostFactoryExternalTwitter;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

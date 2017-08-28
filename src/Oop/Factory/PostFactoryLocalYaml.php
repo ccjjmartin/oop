@@ -4,11 +4,11 @@
  * A local post factory.
  */
 
-namespace Oop\Factories;
+namespace Oop\Factory;
 
 use Symfony\Component\Yaml\Yaml;
-use Oop\Factories\PostFactoryLocal;
-use Oop\Models\Post;
+use Oop\Factory\PostFactoryLocal;
+use Oop\Model\Post;
 
 /**
  * Local post factory.

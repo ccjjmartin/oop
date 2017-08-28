@@ -4,9 +4,9 @@
  * An abstract PostFactoryExternal and FetchableInterface.
  */
 
-namespace Oop\Factories;
+namespace Oop\Factory;
 
-use Oop\Factories\PostFactory;
+use Oop\Factory\PostFactory;
 
 /**
  * The fetchable interface.

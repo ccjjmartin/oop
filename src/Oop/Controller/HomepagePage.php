@@ -1,9 +1,9 @@
 <?php
 
-namespace Oop\Controllers;
+namespace Oop\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Oop\Controllers\PostCollectionPage;
+use Oop\Controller\PostCollectionPage;
 
 /**
  * A controller to build the homepage.
@@ -12,6 +12,8 @@ class HomepagePage {
 
   /**
    * Display homepage.
+   *
+   * @Route("/", name="homepage")
    */
   public function homepage() {
     $page = new PostCollectionPage();
